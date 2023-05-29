@@ -1,8 +1,7 @@
 FROM alpine:latest
 MAINTAINER Delta Projects <no-reply@deltaprojects.com>
 
-RUN set -xe \
-    && apk add --no-cache strongswan sudo
+RUN set -xe && apk add --no-cache strongswan sudo
 
 COPY content/entrypoint.sh /entrypoint.sh
 RUN chmod 0755 /entrypoint.sh
