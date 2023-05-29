@@ -1,4 +1,5 @@
 FROM alpine:latest
+
 MAINTAINER Delta Projects <no-reply@deltaprojects.com>
 
 RUN set -xe && apk add --no-cache strongswan sudo
@@ -17,7 +18,6 @@ RUN echo 'include strongswan.docker/*.conf' >> /etc/strongswan.conf
 # useful when you want ispec to apply firewall rules.
 RUN echo '%ipsec ALL=NOPASSWD:SETENV:/usr/sbin/ipsec' > /etc/sudoers.d/ipsec
 RUN chmod 0440 /etc/sudoers.d/ipsec
-
 
 VOLUME /etc/ipsec.docker /etc/strongswan.docker
 
