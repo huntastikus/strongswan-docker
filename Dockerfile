@@ -2,9 +2,7 @@ FROM alpine:latest
 
 MAINTAINER Delta Projects <no-reply@deltaprojects.com>
 
-RUN apk upgrade --available
-
-RUN set -xe && apk add --no-cache strongswan sudo
+RUN set -xe && apk upgrade --available && apk add --no-cache strongswan sudo
 
 COPY content/entrypoint.sh /entrypoint.sh
 
